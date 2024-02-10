@@ -1,0 +1,61 @@
+
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #222;
+
+} 
+
+.main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 15em auto;
+}
+
+.main-game {
+  display: flex;
+}
+
+.main-game-stats {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.main-game-stats-2 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+}
+.main-game-stats button {
+  height: 3em;
+  align-items: flex-end;
+
+}
+
+.main-game-3 {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.gif img{
+  width: 6.4em;
+  height: 100%;
+  object-fit: contain;
+}
+
+.gif-2 img{
+  width: 10em;
+  
+}
+
+
+.book {
+  padding: 15px;
+  
+}
+

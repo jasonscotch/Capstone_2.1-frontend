@@ -1,0 +1,47 @@
+nav {
+  height: 30px;
+  width: 99vw;
+}
+
+.right {
+  padding: 3px;
+  gap: 5px;
+}
+
+.right button {
+  margin-right: 10px;
+}
+
+.container-fluid {
+  display: flex;
+  justify-content: space-between;
+  width: 95%;
+}
+
+nav a {
+  text-decoration: none;
+}
+
+nav a.active {
+  
+  font-weight: bold;
+  box-sizing: border-box;
+}
+
+nav a.active:hover {
+  color: #f0f2f5 !important;
+}
+
+nav a:hover {
+  text-decoration: none;
+  color: #f0f2f5;
+}
+
+nav a.active.navbar-brand {
+  border-bottom: none;
+}
+
+nav a:not(.navbar-brand):hover {
+  font-weight: bold;
+}
+
