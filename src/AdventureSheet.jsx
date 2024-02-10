@@ -50,7 +50,7 @@ const AdventureSheet = () => {
   const { user } = useAuth();
 
   return (
-    <div style={{width: '40%', maxHeight: '100vh' }}>
+    <div style={{width: '40%' }}>
     <div className='rpgui-container framed-golden-2'>
       <h2>Adventure Sheet - {user.adventurer_name}</h2>
       
