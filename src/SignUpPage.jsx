@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useAuth } from './AuthContext';
 import { useNavigate } from 'react-router-dom';
-import './dist/rpgui.css';
+import './assets/rpgui.css';
 
 
 const SignUpPage = () => {

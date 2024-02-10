@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from './AuthContext';
 import { useGame } from "./GameContext";
-import './dist/rpgui.css';
+import './assets/rpgui.css';
 
 function Home() {
     const navigate = useNavigate();
