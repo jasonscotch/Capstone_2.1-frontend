@@ -8,6 +8,7 @@ import Provisions from './Provisions';
 import { useGame } from "./GameContext";
 import { useAuth } from "./AuthContext";
 import character from './adventurer.gif';
+import skelly from './skelly.gif';
 
 const AdventureSheet = () => {
 

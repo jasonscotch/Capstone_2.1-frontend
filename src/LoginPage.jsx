@@ -1,9 +1,10 @@
 import { useState, useEffect } from 'react';
 import { useAuth } from './AuthContext';
 import { useNavigate } from 'react-router-dom';
+import LoadingModal from './LoadingModal';
 
 const LoginPage = () => {
-  const { user, login } = useAuth();
+  const { user, login, isLoading, setIsLoading } = useAuth();
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
@@ -12,7 +13,14 @@ const LoginPage = () => {
     e.preventDefault();
 
     const userData = { username, password };
-    await login(userData);
+    setIsLoading(true); 
+    try {
+      await login(userData);
+    } catch (error) {
+      console.error('Error logging in:', error);
+    } finally {
+      setIsLoading(false);
+    }
 
   };
 
@@ -25,7 +33,12 @@ const LoginPage = () => {
   }, [user]);
 
   return (
+    <div>
+    <div>
+       
+    </div>
     <div className='main'>
+      {isLoading && <LoadingModal />}
       <div className='rpgui-container framed'>
         <h2>Login</h2>
         <form onSubmit={handleLogin}>
@@ -44,7 +57,9 @@ const LoginPage = () => {
           <br />
           <button className="rpgui-button" type='submit' data-testid='login'><p>Login</p></button>
         </form>
-      </div> 
+      </div>
+      
+    </div>
     </div>
   );
 };

@@ -18,7 +18,7 @@ const Provisions = ({ originalStamina, stamina, setStamina, remainingProvisions,
       <h2>Provisions</h2>
       <h1>{remainingProvisions}</h1>
       <br></br>
-      <button onClick={handleUseProvision} disabled={stamina === originalStamina}>Use Provision</button>
+      <button onClick={handleUseProvision} disabled={stamina === originalStamina}>Use</button>
     </div>
     </div>
   );

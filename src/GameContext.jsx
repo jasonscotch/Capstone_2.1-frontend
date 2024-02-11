@@ -3,7 +3,7 @@ import axios from "axios";
 import { useAuth } from "./AuthContext";
 import { useNavigate } from 'react-router-dom';
 
-const BASE_URL = import.meta.env.VITE_BASE_URL || "http://localhost:3001";
+const BASE_URL = import.meta.env.VITE_BASE_URL
 
 const GameContext = createContext();
 
@@ -43,6 +43,8 @@ export const GameProvider = ({ children }) => {
     const [progressId, setProgressId] = useState(0);
     const [loadAvailable, setLoadAvailable] = useState(false);
     const [saveError, setSaveError] = useState(null);
+
+    
 
 
     const fetchData = async (chapterId) => {

@@ -2,10 +2,11 @@ import { useState } from 'react';
 import { useAuth } from './AuthContext';
 import { useNavigate } from 'react-router-dom';
 import './assets/rpgui.css';
+import LoadingModal from './LoadingModal';
 
 
 const SignUpPage = () => {
-  const { signUp, signUpError } = useAuth();
+  const { signUp, signUpError, isLoading, setIsLoading } = useAuth();
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [adventurerName, setAdventurerName] = useState('');
@@ -17,16 +18,19 @@ const SignUpPage = () => {
 
   const handleSignUp = async (e) => {
     e.preventDefault();
+    setIsLoading(true);
     try {
       signUp({ username, password, adventurerName });
     } catch (err) {
       console.error('Error during sign-up:', err);
+    } finally { 
+      setIsLoading(false);
     }
-    
   };
 
   return (
     <div className="main">
+      {isLoading && <LoadingModal />}
       <div className="rpgui-container framed">
         <h2>Sign Up</h2>
         <form onSubmit={handleSignUp}>

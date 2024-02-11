@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import SaveProgress from "./SaveProgress";
 import DeleteProgress from './DeleteProgress';
 import { useGame } from "./GameContext";
@@ -52,6 +52,8 @@ const Book = () => {
     window.location.reload();
   };
 
+
+
   const handleLoadGame = async () => { 
     await LoadSavedGame(); 
   };
@@ -67,6 +69,7 @@ const Book = () => {
   useEffect(() => {
     areThereItems();
     
+    
   }, [items]);
   
 
@@ -75,6 +78,7 @@ const Book = () => {
     if (chapterId) {
       await fetchData(chapterId);
     }
+
   };
 
   const renderChoiceButton = (choiceNumber) => {
@@ -145,7 +149,7 @@ const Book = () => {
     const playerDiceRolls = rollBothDice();
     const playerAttackStrength = playerDiceRolls.reduce((sum, roll) => sum + roll, 0) + skill;
 
-    const matchItems = inventoryItems.filter(item => item.monster_category === enemies[0].monster_category);
+    const matchItems = inventoryItems.filter(item => item.monster_category === enemies[0].monster_category || 'all');
 
     setMatchingItems(matchItems);
 
